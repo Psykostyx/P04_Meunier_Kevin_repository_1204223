@@ -1,3 +1,117 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  width: 65%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: linear-gradient(180deg, #e370da, #a05adc);
+  color: white;
+  margin-left: 15%;
+}
 
+header {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+header h1 {
+  font-size: 24px;
+  text-align: center;
+}
+header p {
+  font-size: 18px;
+  text-align: center;
+}
+
+.logo {
+  display: block;
+  margin: auto;
+  width: 50%;
+  margin-top: 5px;
+}
+
+.intro {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
+  border-top: 5px solid #dbdbdb;
+  margin-top: 10px;
+  background-color: #eaeaea;
+}
+.intro i {
+  margin-right: 5px;
+}
+
+.loader {
+  z-index: 999;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes loader_ball {
+  0% {
+    filter: contrast(0);
+    transform: translateY(0px);
+  }
+  40% {
+    transform: translateY(-13px);
+    filter: contrast(1);
+  }
+  60% {
+    transform: translateY(0px);
+    filter: contrast(0);
+  }
+  100% {
+    transform: translateY(0px);
+    filter: contrast(0);
+  }
+}
+.loader svg :nth-child(1) {
+  fill: black;
+  animation: loader_ball infinite 1.25s ease-in-out 0ms;
+}
+
+.loader svg :nth-child(2) {
+  fill: yellow;
+  animation: loader_ball infinite 1.25s ease-in-out 0.25s;
+}
+
+.loader svg :nth-child(3) {
+  fill: red;
+  animation: loader_ball infinite 1.25s ease-in-out 0.5s;
+}
+
+main {
+  width: auto;
+}
+
+body {
+  overflow: hidden;
+  margin: 0;
+}
+
+.fonction {
+  text-align: center;
+}
+
+.fonction-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px;
+  margin: 0 15px;
+}
+
+.card img {
+  width: 70%;
+  object-fit: cover;
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,35 @@
+header{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+ & h1{
+    font-size: 24px;
+    text-align: center;
+ }   
+ & p{
+    font-size: 18px;
+    text-align: center;
+ }
+}
+.logo{
+    display: block;
+    margin: auto;
+    width: 50%;
+    margin-top: 5px;
+}
+
+.intro{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+    border-top: 5px solid #dbdbdb;
+    margin-top: 10px;
+    background-color: #eaeaea;
+
+    & i{
+        margin-right: 5px;
+    }
+}
+

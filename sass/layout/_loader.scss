@@ -1,0 +1,45 @@
+.loader {
+    z-index: 999;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes loader_ball {
+    0% {
+        filter: contrast(0);
+        transform: translateY(0px);
+    }
+
+    40% {
+        transform: translateY(-13px);
+        filter: contrast(1);
+    }
+
+    60% {
+        transform: translateY(0px);
+        filter: contrast(0);
+    }
+
+    100% {
+        transform: translateY(0px);
+        filter: contrast(0);
+    }
+}
+
+.loader svg :nth-child(1) {
+    fill: black;
+    animation: loader_ball infinite 1.25s ease-in-out 0ms;
+}
+.loader svg :nth-child(2) {
+    fill: yellow;
+    animation: loader_ball infinite 1.25s ease-in-out .25s;
+}
+.loader svg :nth-child(3) {
+    fill: red;
+    animation: loader_ball infinite 1.25s ease-in-out .5s;
+}
