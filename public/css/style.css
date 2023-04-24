@@ -1,4 +1,5 @@
-.btn {
+@charset "UTF-8";
+.bouton-index {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,39 +12,41 @@
   margin-left: 15%;
 }
 
-header {
-  width: 100%;
+@media (min-width: 768px) and (max-width: 992px) {
+  .bouton-index {
+    width: 35%;
+    margin-left: 32%;
+  }
+}
+@media (min-width: 993px) and (max-width: 1980px) {
+  .bouton-index {
+    width: 10%;
+    margin-left: 0;
+  }
+}
+footer {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
+  background-color: #353535;
+  align-items: flex-start;
+  padding: 22px 25px;
 }
-header h1 {
-  font-size: 24px;
-  text-align: center;
+footer img {
+  width: 30%;
+  filter: invert(1);
+  margin-bottom: 15px;
 }
-header p {
-  font-size: 18px;
-  text-align: center;
+footer span {
+  display: inline-flex;
+  padding-bottom: 15px;
+  color: white;
+  font-size: 16px;
+  gap: 10px;
 }
 
-.logo {
-  display: block;
-  margin: auto;
-  width: 50%;
-  margin-top: 5px;
-}
-
-.intro {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  justify-content: center;
-  border-top: 5px solid #dbdbdb;
-  margin-top: 10px;
-  background-color: #eaeaea;
-}
-.intro i {
-  margin-right: 5px;
+footer i {
+  color: white;
+  gap: 10px;
 }
 
 .loader {
@@ -94,8 +97,50 @@ main {
 }
 
 body {
-  overflow: hidden;
   margin: 0;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+header h1 {
+  font-size: 24px;
+  text-align: center;
+}
+header p {
+  font-size: 18px;
+  text-align: center;
+}
+
+.logo {
+  display: block;
+  margin: auto;
+  width: 50%;
+  margin-top: 5px;
+}
+
+.localisation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-top: 2px solid #dbdbdb;
+  margin-top: 10px;
+  background-color: #eaeaea;
+  font-size: 16px;
+  padding: 25px 20px;
+}
+.localisation i {
+  margin-right: 5px;
+  color: black;
+}
+
+.intro {
+  background-color: #F6F6F6;
+  padding-bottom: 40px;
 }
 
 .fonction {
@@ -108,10 +153,202 @@ body {
   padding: 0 15px;
   margin: 0 15px;
 }
+.fonction-list .fonction-propriété {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+.fonction-list.number {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.fonction-list p {
+  margin-left: 10px;
+  font-size: 16px;
+}
+.fonction-list i {
+  display: inline;
+  align-items: flex-start;
+  margin-right: 10px;
+}
+
+.fonction-propriété {
+  align-content: center;
+  border-radius: 20px;
+  background-color: #f6f6f6;
+  margin-bottom: 25px;
+  box-shadow: 5px 5px 5px 0px #e7e7e7;
+  margin-right: 15px;
+  margin-left: 5px;
+  padding: 7px 10px;
+}
+
+.number {
+  border-radius: 50% 50% 50% 50%;
+  background-color: #9356DC;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  font-size: 10px;
+  margin-right: 5px;
+  padding: 7px 10px;
+}
+
+.restaurants {
+  background-color: #F6F6F6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.restaurants h2 {
+  padding-top: 25px;
+  margin-left: 25px;
+}
+
+.card {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 15px;
+  position: relative;
+  margin-bottom: 25px;
+  border: 1px solid white;
+  border-radius: 10% 10% 10% 10%;
+  box-shadow: 0px 4px 15px 0px #e7e7e7;
+}
+.card h3 {
+  margin: 5px;
+  font-size: 18px;
+  margin-left: 20px;
+}
+.card p {
+  margin: 5px;
+  font-size: 18px;
+  margin-left: 20px;
+}
+
+.new {
+  position: absolute;
+  top: 5%;
+  left: 70%;
+}
+.new p {
+  padding: 2px;
+  color: #008766;
+  border-radius: 5%;
+  background-color: #99E2D0;
+}
+
+.heart {
+  position: relative;
+}
+.heart .fa-heart {
+  position: absolute;
+  bottom: 20px;
+  left: 90%;
+}
+
+.heart-full {
+  opacity: 0;
+}
 
 .card img {
-  width: 70%;
+  width: 100%;
+  height: 231px;
+  border-radius: 15px 15px 0 0;
   object-fit: cover;
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .logo {
+    width: 40%;
+    margin-top: 10px;
+  }
+  .localisation {
+    font-size: 22px;
+  }
+  .intro {
+    font-size: 22px;
+  }
+  .fonction {
+    text-align: center;
+  }
+  .fonction h2 {
+    margin-left: 40px;
+  }
+  .fonction-list p {
+    margin-left: 15%;
+    font-size: 24px;
+  }
+  .fonction-list p i {
+    font-size: 24px;
+    margin-right: 25px;
+  }
+  .number {
+    position: absolute;
+    left: 2%;
+    width: 3%;
+    font-size: 22px;
+  }
+  .restaurants {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+  }
+  .restaurants h2 {
+    width: 100%;
+    margin-left: 5%;
+  }
+  .card {
+    width: 40%;
+    gap: 5%;
+    padding: 15px;
+  }
+  .new {
+    position: absolute;
+    top: 10%;
+    left: 65%;
+  }
+}
+@media (min-width: 993px) and (max-width: 1980px) {
+  .logo {
+    width: 30%;
+    margin-top: 30px;
+  }
+  .intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+  }
+  .intro h1 {
+    font-size: 40px;
+  }
+  .intro p {
+    font-size: 18px;
+  }
+  .restaurants {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+  }
+  .restaurants h2 {
+    width: 100%;
+  }
+  .card {
+    width: 35%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
