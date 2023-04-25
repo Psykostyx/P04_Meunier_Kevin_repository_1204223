@@ -1,4 +1,4 @@
-footer{
+.footer-index{
     display: flex;
     flex-direction: column;
     background-color: #353535;
@@ -19,7 +19,41 @@ footer{
         gap: 10px;
     }
 }
-footer i {
+.footer-index i {
+    color: white;
+    gap: 10px;
+}
+
+
+
+
+
+.footer-menu{
+    z-index: 2;
+    position: absolute;
+    top: 170%;
+    width: 88%;
+    display: flex;
+    flex-direction: column;
+    background-color: #353535;
+    align-items: flex-start;
+    padding: 22px 25px;
+
+    & img{
+        width: 30%;
+        filter: invert(1);
+        margin-bottom: 15px;
+    }
+
+    & span { 
+        display: inline-flex;
+        padding-bottom: 15px;
+        color: white;
+        font-size: 16px;
+        gap: 10px;
+    }
+}
+.footer-menu i {
     color: white;
     gap: 10px;
 }
