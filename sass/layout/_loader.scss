@@ -1,13 +1,24 @@
+@keyframes loader_display {
+    0%{
+        visibility: visible;
+    }
+    100% {
+        visibility: hidden;
+    }
+}
+
 .loader {
     z-index: 999;
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
-
+    backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     justify-content: center;
-
+    animation:linear forwards loader_display 1s;
 }
 
 @keyframes loader_ball {
@@ -39,12 +50,14 @@
 
 
 }
+
 .loader svg :nth-child(2) {
     fill: $color-primary;
     animation: loader_ball infinite 1s ease-in-out .25s;
 
 
 }
+
 .loader svg :nth-child(3) {
     fill: $color-primary;
     animation: loader_ball infinite 1s ease-in-out .5s;
