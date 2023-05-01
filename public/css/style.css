@@ -1,7 +1,8 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap&family=Shrikhand&display=swap");
 p {
   font-family: "Roboto", sans-serif;
-  font-weight: bold;
+  font-weight: 300;
 }
 
 h3 {
@@ -13,52 +14,77 @@ h3 {
 
 h2 {
   font-family: "Roboto", sans-serif;
+  font-weight: 900;
 }
 
 a {
   font-family: "Roboto", sans-serif;
 }
 
-.bouton-index {
+.bouton-rose {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 20px;
-  width: 65%;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background: linear-gradient(180deg, #e370da, #a05adc);
+  border-radius: 1000px;
+  padding: 12px 24px;
   color: white;
-  margin-left: 15%;
+  background: linear-gradient(180deg, #e370da, #a05adc);
+  box-shadow: 1px 2px 5px rgba(227, 112, 218, 0.35);
+  cursor: pointer;
+  filter: saturate(0.82);
+  transition: box-shadow 300ms, filter 300ms;
 }
 
-.bouton-menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 20px;
-  padding: 10px;
-  width: 40%;
-  margin-top: 5%;
-  margin-left: auto;
-  margin-right: auto;
-  background: linear-gradient(180deg, #e370da, #a05adc);
-  color: white;
+.bouton-rose:hover {
+  filter: saturate(1.1);
+  box-shadow: 2px 3px 10px rgba(227, 112, 218, 0.5);
 }
 
-@media (min-width: 768px) and (max-width: 992px) {
-  .bouton-index {
-    width: 35%;
-    margin-left: 32%;
-  }
+.heart {
+  position: relative;
+  font-size: 22px;
+  cursor: pointer;
 }
-@media (min-width: 993px) and (max-width: 1980px) {
-  .bouton-index {
-    width: 20%;
-    margin-left: auto;
-    margin-right: auto;
-  }
+
+.heart::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  font-size: inherit;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 300;
+  content: "\f004";
 }
+
+.heart[aria-checked]::before {
+  opacity: 0;
+}
+
+.heart::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  font-size: inherit;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  content: "\f004";
+  color: #9356DC;
+  opacity: 0;
+  transition: 300ms opacity;
+}
+
+.heart:hover::after,
+.heart[aria-checked]::after {
+  opacity: 1;
+}
+
+.heart[aria-checked]:hover::after {
+  content: "\f7a9";
+  filter: contrast(0.7);
+}
+
 header {
   width: 100%;
   display: flex;
@@ -103,6 +129,8 @@ footer {
   background-color: #353535;
   align-items: flex-start;
   padding: 22px 25px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
 }
 footer img {
   width: 30%;
@@ -169,29 +197,18 @@ footer i {
   }
 }
 .loader svg :nth-child(1) {
-  fill: black;
-  animation: loader_ball infinite 1.25s ease-in-out 0ms;
+  fill: #9356DC;
+  animation: loader_ball infinite 1s ease-in-out 0ms;
 }
 
 .loader svg :nth-child(2) {
-  fill: yellow;
-  animation: loader_ball infinite 1.25s ease-in-out 0.25s;
+  fill: #9356DC;
+  animation: loader_ball infinite 1s ease-in-out 0.25s;
 }
 
 .loader svg :nth-child(3) {
-  fill: red;
-  animation: loader_ball infinite 1.25s ease-in-out 0.5s;
-}
-
-.hear-full {
-  opacity: 0;
-  transition-property: all;
-  transition-duration: 2s;
-}
-
-.hear-full:hover {
-  opacity: 1;
-  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  fill: #9356DC;
+  animation: loader_ball infinite 1s ease-in-out 0.5s;
 }
 
 main {
@@ -226,6 +243,10 @@ body {
 }
 
 .intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  vertical-align: middle;
   background-color: #F6F6F6;
   padding-bottom: 40px;
 }
@@ -239,17 +260,38 @@ body {
   flex-direction: column;
   padding: 0 15px;
   margin: 0 15px;
+  counter-reset: fonction_list;
 }
 .fonction-list .fonction-propriété {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 60px;
+  cursor: pointer;
+  position: relative;
 }
-.fonction-list.number {
-  display: inline-flex;
-  align-items: flex-start;
-  gap: 10px;
+.fonction-list .fonction-propriété::before {
+  counter-increment: fonction_list;
+  content: counter(fonction_list);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  width: 30px;
+  height: 30px;
+  border-radius: 1000px;
+  background-color: #9356DC;
+}
+.fonction-list .fonction-propriété:hover i {
+  opacity: 1;
+  color: #9356DC;
 }
 .fonction-list p {
   margin-left: 30px;
@@ -261,12 +303,6 @@ body {
   opacity: 0.5;
   display: inline;
 }
-.fonction-list i:hover {
-  cursor: pointer;
-  opacity: 1;
-  transform: scale(0.5);
-  color: #9356DC;
-}
 
 .fonction-propriété {
   align-content: center;
@@ -277,23 +313,6 @@ body {
   margin-right: 15px;
   margin-left: 5px;
   padding: 7px 10px;
-}
-
-.number {
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-  width: 32px;
-  height: 32px;
-  box-sizing: border-box;
-  border-radius: 25px;
-  background-color: #9356DC;
-  font-weight: bold;
-  color: white;
-  position: absolute;
-  left: 6%;
-  font-size: 22px;
 }
 
 .restaurants {
@@ -309,25 +328,34 @@ body {
 }
 
 .card {
+  position: relative;
   width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 15px;
-  position: relative;
+  font-size: 16px;
   margin-bottom: 25px;
   border: 1px solid white;
   border-radius: 15px;
   box-shadow: 0px 4px 15px 0px #e7e7e7;
 }
-.card h3 {
+.card .card_header {
+  position: relative;
+}
+.card .card_header h3 {
   margin: 5px;
   margin-left: 20px;
   font-style: normal;
 }
-.card p {
+.card .card_header p {
   margin: 5px;
   margin-left: 20px;
+}
+.card .card_header .heart {
+  font-size: 26px;
+  position: absolute;
+  top: 50%;
+  right: 35px;
 }
 
 /* Badge Nouveau */
@@ -336,6 +364,8 @@ body {
   position: absolute;
   top: 15px;
   right: 18px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
   color: #008766;
   background-color: #99E2D0;
   padding: 7px 9px;
@@ -356,20 +386,6 @@ body {
 .card a:visited {
   text-decoration: none;
   color: black;
-}
-
-.heart {
-  position: relative;
-}
-.heart .fa-heart {
-  position: absolute;
-  bottom: 20px;
-  left: 90%;
-  font-size: 20px;
-}
-
-.heart-full {
-  opacity: 0;
 }
 
 .card img {
@@ -405,11 +421,6 @@ body {
     font-size: 24px;
     margin-right: 25px;
   }
-  .number {
-    position: absolute;
-    left: 3%;
-    font-size: 22px;
-  }
   .restaurants {
     display: flex;
     flex-direction: row;
@@ -426,7 +437,6 @@ body {
   .card {
     width: 40%;
     gap: 5%;
-    padding: 15px;
   }
   .card[data-new]::before {
     top: 20px;
@@ -442,13 +452,6 @@ body {
   .logo {
     width: 30%;
     margin-top: 30px;
-  }
-  .intro {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    vertical-align: middle;
   }
   .intro h1 {
     font-size: 40px;
@@ -481,11 +484,6 @@ body {
     gap: 0px;
     justify-content: flex-start;
   }
-  .number {
-    position: relative;
-    left: -5%;
-    width: 8%;
-  }
   .restaurants {
     display: flex;
     flex-direction: row;
@@ -506,16 +504,14 @@ body {
 }
 
 .img-resto {
-  height: 176px;
+  height: 216px;
 }
 
-.img-resto::before {
-  content: "";
+.img-resto > img {
   position: absolute;
   height: 276px;
   width: 100%;
-  background-image: var(--img_src);
-  background-size: cover;
+  object-fit: cover;
 }
 
 .menu-propriété {
@@ -525,10 +521,13 @@ body {
   background-color: #f2f2f2;
   border-radius: 25px 25px 0 0;
   padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .menu-propriété h1 {
   font-family: "Shrikhand", cursive;
-  margin-left: 35px;
 }
 
 .title-restaurant {
@@ -536,68 +535,131 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
 }
 .title-restaurant i {
   font-size: 22px;
 }
 
-.title-meal {
-  border-bottom: #99E2D0 2px solid;
-  width: 10%;
-  margin-left: 15px;
-  margin-bottom: 5px;
+.meal:nth-child(1) .card-menu {
+  animation-delay: 200ms;
+}
+
+.meal:nth-child(2) .card-menu {
+  animation-delay: 400ms;
+}
+
+.meal:nth-child(3) .card-menu {
+  animation-delay: 600ms;
+}
+
+.meal:nth-child(4) .card-menu {
+  animation-delay: 800ms;
+}
+
+.meal:nth-child(5) .card-menu {
+  animation-delay: 1000ms;
 }
 
 .meal {
+  width: 90%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.meal .title-meal {
   position: relative;
-  margin-bottom: 15px;
+  width: 100%;
 }
-
-.card-menu {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  background-color: white;
-  border-radius: 20px;
-  margin-top: 10px;
-  margin-left: 10px;
-}
-.card-menu h3 {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  margin-top: 10px;
-  margin-left: 10px;
-  font-size: 18px;
-}
-.card-menu p {
-  display: flex;
-  flex-direction: row;
-  margin: 0;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  margin-left: 10px;
-  font-size: 15.04px;
-}
-
-.price {
-  display: flex;
+.meal .title-meal::before {
+  content: "";
   position: absolute;
-  top: 45%;
-  left: 85%;
-  flex-direction: row-reverse;
-  justify-content: flex-start;
+  bottom: -2px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: #99E2D0;
+}
+@keyframes card-anim {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+.meal .card-menu {
+  transform: translateX(100px);
+  opacity: 0;
+  animation: card-anim 300ms ease-in forwards;
+  width: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  background-color: white;
+  border-radius: 15px;
+  box-sizing: border-box;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.15);
+}
+.meal .card-menu h3 {
   margin: 0;
-  margin-right: 10px;
+  margin-top: 16px;
+  margin-left: 16px;
+  font-size: 18px;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.meal .card-menu p {
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 16px;
+  margin-left: 16px;
+  font-size: 16px;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.meal .card-menu div:first-child {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.meal .card-menu .price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+.meal .card-menu i {
+  width: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
+  color: white;
+  background-color: #99E2D0;
+  transition: all 300ms;
+}
+.meal .card-menu:hover i {
+  opacity: 1;
+  width: 60px;
 }
 
-@media (min-width: 993px) and (max-width: 1980px) {
-  .title-restaurant {
-    gap: 15px;
-  }
+@media (min-width: 993px) {
   .menu-propriété {
     width: 75%;
     margin-left: auto;
@@ -605,9 +667,7 @@ body {
     top: 25%;
   }
   .meal {
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 60%;
   }
 }
 

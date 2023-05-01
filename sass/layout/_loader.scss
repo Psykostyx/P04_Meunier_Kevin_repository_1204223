@@ -7,6 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 @keyframes loader_ball {
@@ -31,15 +32,22 @@
     }
 }
 
+
 .loader svg :nth-child(1) {
-    fill: black;
-    animation: loader_ball infinite 1.25s ease-in-out 0ms;
+    fill: $color-primary;
+    animation: loader_ball infinite 1s ease-in-out 0ms;
+
+
 }
 .loader svg :nth-child(2) {
-    fill: yellow;
-    animation: loader_ball infinite 1.25s ease-in-out .25s;
+    fill: $color-primary;
+    animation: loader_ball infinite 1s ease-in-out .25s;
+
+
 }
 .loader svg :nth-child(3) {
-    fill: red;
-    animation: loader_ball infinite 1.25s ease-in-out .5s;
+    fill: $color-primary;
+    animation: loader_ball infinite 1s ease-in-out .5s;
+
+
 }

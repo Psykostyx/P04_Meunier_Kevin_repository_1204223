@@ -4,6 +4,8 @@ footer{
     background-color: #353535;
     align-items: flex-start;
     padding: 22px 25px;
+    font-family: $font-primary;
+    font-weight: 700;
 
     & img{
         width: 30%;
@@ -31,6 +33,7 @@ footer i {
     footer {
         flex-direction: row-reverse;
         gap: 2%;
+
 
         & img {
             width: 9%;
