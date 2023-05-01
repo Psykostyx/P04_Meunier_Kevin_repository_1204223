@@ -1,0 +1,9 @@
+.hear-full{
+    opacity: 0;
+    transition-property: all;
+    transition-duration: 2s;
+}
+.hear-full:hover{
+    opacity: 1;
+    background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+}

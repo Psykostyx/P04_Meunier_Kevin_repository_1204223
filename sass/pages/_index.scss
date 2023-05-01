@@ -1,18 +1,19 @@
 main {
     width: auto;
 }
-body{
+
+body {
     margin: 0;
 }
 
-.logo{
+.logo {
     display: block;
     margin: auto;
     width: 50%;
     margin-top: 5px;
 }
 
-.localisation{
+.localisation {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -23,256 +24,330 @@ body{
     font-size: 16px;
     padding: 25px 20px;
 
-    & i{
+    & i {
         margin-right: 5px;
         color: black;
     }
 }
-.intro{
+
+.intro {
     background-color: #F6F6F6;
     padding-bottom: 40px;
 }
-.fonction{
+
+.fonction {
     text-align: center;
 }
-.fonction-list{
+
+.fonction-list {
     display: flex;
     flex-direction: column;
     padding: 0 15px;
-    margin: 0 15px;    
-    & .fonction-propriété{
+    margin: 0 15px;
+
+    & .fonction-propriété {
         display: flex;
         flex-direction: row;
         align-items: center;
         gap: 60px;
     }
-    &.number{
+
+    &.number {
 
         display: inline-flex;
         align-items: flex-start;
-        gap:10px;
+        gap: 10px;
     }
+
     & p {
-    margin-left: 30px;
-    font-size: 16px;
+        margin-left: 30px;
+        font-size: 16px;
     }
-    & i{
-        
+
+    & i {
+
         align-items: flex-start;
         margin-right: 30px;
         opacity: 0.5;
         display: inline;
     }
-    & i:hover{
+
+    & i:hover {
         cursor: pointer;
         opacity: 1;
         transform: scale(0.5);
-        color:$color-primary
+        color: $color-primary
     }
 }
-.number{
-    position: absolute;
-    left: 6%;
-    width: 1%;
-    font-size: 22px;
-}        
-.fonction-propriété{
+
+
+
+.fonction-propriété {
     align-content: center;
     border-radius: 20px;
-    background-color:#f6f6f6;
+    background-color: #f6f6f6;
     margin-bottom: 25px;
     box-shadow: 5px 5px 5px 0px #e7e7e7;
     margin-right: 15px;
     margin-left: 5px;
     padding: 7px 10px;
 }
-.number{
-    border-radius: 50% 50% 50% 50%;
+
+.number {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    box-sizing: border-box;
+    border-radius: 25px;
     background-color: $color-primary;
     font-weight: bold;
     color: white;
-    text-align: center;
-    font-size: 10px;
-    margin-right: 5px;
-    padding: 7px 10px;
+    position: absolute;
+    left: 6%;
+    font-size: 22px;
 }
-.restaurants{
+
+.restaurants {
     background-color: #F6F6F6;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    & h2{
+    & h2 {
         padding-top: 25px;
         margin-left: 25px;
     }
 }
-.card{
-        width: 90%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        font-size: 15px;
-        position: relative;
-        margin-bottom: 25px;
-        border: 1px solid white;
-        border-radius: 10% 10% 10% 10%;
-        box-shadow: 0px 4px 15px 0px #e7e7e7;
-        & h3 {
-            margin: 5px;
-            font-size: 18px;
-            margin-left: 20px;
-        }
-         & p { 
-            margin: 5px;
-            font-size: 18px;
-            margin-left: 20px;
-         }  
+
+.card {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 15px;
+    position: relative;
+    margin-bottom: 25px;
+    border: 1px solid white;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px 0px #e7e7e7;
+
+    & h3 {
+        margin: 5px;
+        margin-left: 20px;
+        font-style: normal;
     }
-    
-    .card a {
-        text-decoration: none;
-        color: black;
+
+    & p {
+        margin: 5px;
+        margin-left: 20px;
     }
-    .card a:hover{
-        cursor: pointer;
-        text-decoration: none;
-    }
-    .card a:visited{
-        text-decoration: none;
-        color: black;
-    }
-    .new {
+}
+
+/* Badge Nouveau */
+.card[data-new]::before {
+    content: "Nouveau";
+    position: absolute;
+    top: 15px;
+    right: 18px;
+
+    color: #008766;
+    background-color: #99E2D0;
+    padding: 7px 9px;
+    border-radius: 3px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.card a {
+    text-decoration: none;
+    color: black;
+}
+
+.card a:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.card a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.heart {
+    position: relative;
+
+    & .fa-heart {
         position: absolute;
-        top: 5%;
-        left: 70%;
-    
-        & p {
-            padding: 2px;
-            color: #008766;
-            border-radius: 5%;
-            background-color: #99E2D0;
-        }
-     }
+        bottom: 20px;
+        left: 90%;
+        font-size: 20px;
+    }
+}
 
-    .heart {
-        position: relative;
+.heart-full {
+    opacity: 0;
+}
 
-        & .fa-heart {
-            position: absolute;
-            bottom: 20px;
-            left:90%;
-            font-size: 20px;
-        }
-    }
-    .heart-full{
-        opacity: 0;
-    }
-   
-    .card img{
-        width: 100%;
-        height: 231px;
-        border-radius: 15px 15px 0 0 ;
-        object-fit: cover;
-    }
+.card img {
+    width: 100%;
+    height: 231px;
+    border-radius: 15px 15px 0 0;
+    object-fit: cover;
+}
+
+// Version Tablette
 @media (min-width: 768px) and (max-width: 992px) {
-        .logo{
-            width: 40%;
-            margin-top: 10px;
-        }
-        .localisation{
-            font-size: 22px;
-        }
-        .intro{
-            font-size: 22px;
-        }
-        .fonction{
-            text-align: center;
+    .logo {
+        width: 30%;
+        margin-top: 10px;
+    }
+
+    .localisation {
+        font-size: 22px;
+    }
+
+    .intro {
+        font-size: 22px;
+    }
+
+    .fonction {
+        text-align: center;
 
         & h2 {
             margin-left: 40px;
         }
-        }
-        .fonction-list p{
-            margin-left: 15%;
+    }
+
+    .fonction-list p {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 24px;
+
+        & i {
             font-size: 24px;
-            & i{
-                font-size: 24px;
-                margin-right: 25px;
-            }
+            margin-right: 25px;
+        }
+    }
+
+    .number {
+        position: absolute;
+        left: 3%;
+        font-size: 22px;
+    }
+
+    .restaurants {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        vertical-align: middle;
+        gap: 20px;
+
+        & h2 {
+            width: 100%;
+            margin-left: 5%;
+        }
+    }
+
+    .card {
+        width: 40%;
+        gap: 5%;
+        padding: 15px;
+    }
+
+    .card[data-new]::before {
+        top: 20px;
+        right: 25px;
+    }
+
+    .new {
+        position: absolute;
+        top: 10%;
+        left: 65%;
+    }
+}
+
+@media (min-width: 993px) and (max-width: 1980px) {
+    .logo {
+        width: 30%;
+        margin-top: 30px;
+    }
+
+    .intro {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        vertical-align: middle;
+
+        & h1 {
+            font-size: 40px;
+        }
+
+        & p {
+            font-size: 18px;
+        }
+    }
+    .fonction{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0;
+       
+        & h2{
+            width: 100%;
+        }
+    }
+    .fonction-propriété{
+        justify-content: space-around;
+        width: 25%;
+    }
+    .fonction-list{
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+
+        & p {
+            font-size: 16px;
         }
         
-        .number{
-            position: absolute;
-            left: 2%;
-            width: 3%;
-            font-size: 22px;
-        }
-        .restaurants{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            vertical-align: middle;
-            & h2{
-                width: 100%;
-                margin-left: 5%;
-            }
-        }
-        .card{
-            width: 40%;
-            // margin-left: 35px;
-            gap: 5%;
-            padding: 15px;
-        }
-        .new{
-            position:absolute;
-            top: 10%;
-            left: 65%;
-        } 
+    }
+    .fonction-list .fonction-propriété{
+        gap: 0px;
+        justify-content: flex-start;
     }
     
-@media (min-width: 993px) and (max-width: 1980px){
-.logo{
-    width: 30%;
-    margin-top: 30px;
-}
-.intro{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    vertical-align: middle;
-
-    & h1 {
-        font-size: 40px;
+    .number{
+        position: relative;
+        left: -5%;
+        width: 8%;
     }
-    & p{
-        font-size: 18px;
+
+    .restaurants {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+
+
     }
-}
-.restaurants{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content:space-evenly;
-    align-items: center;
-    width: 100%;
+    .restaurants h2 {
+        width: 100%;
+    }
 
-   
-}
-.restaurants h2{
-    width: 100%;
+    .card {
+        width: 40%;
+    }
 
 
-}
-.card{
-    width: 35%;
-}
-}    
-       
 
-    
 
+
+
+    }

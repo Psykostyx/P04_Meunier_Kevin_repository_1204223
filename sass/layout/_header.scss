@@ -6,6 +6,7 @@ header{
  & h1{
     font-size: 24px;
     text-align: center;
+    font-family: $font-primary;
  }   
  & p{
     font-size: 18px;
@@ -18,7 +19,7 @@ header{
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
 
     & .fa-arrow-left{
         margin-left: 5px;
@@ -27,6 +28,12 @@ header{
        color: black;
     }
 }
-
+@media (min-width: 993px) and (max-width: 1980px){
+.header-menu{
+   width: 70%;
+   margin-left: auto;
+   margin-right: auto;
+}
+}
 
 

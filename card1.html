@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Entreprise de commande de repas en ligne">
@@ -12,23 +13,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/public/css/style.css">
-	<title>La palette du goût</title>
+    <title>La palette du goût</title>
 </head>
+
 <body>
     <header class="header-menu">
         <a class="fas fa-arrow-left" href="index.html"></a>
         <img class="logo" src="images/logo/ohmyfood.png">
-        
     </header>
-    <div class="img-resto">
-        <img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg">
-    </div>
     <main>
+        <div class="img-resto" style="--img_src: url('/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg');">
+        </div>
         <article class="menu-propriété">
             <div class="title-restaurant">
                 <h1>La palette du goût</h1>
-                <i class="fa-sharp fa-regular fa-heart"></i>
-                <i class="fa-solid fa-heart heart-full"></i>
+                <span class="fa-stack">
+                    <i class="fa-stack-1x fa-sharp fa-regular fa-heart"></i>
+                    <i class="fa-stack-1x fa-solid fa-heart heart-full"></i>
+                </span>
             </div>
             <div class="meal">
                 <span class="title-meal">ENTRÉES</span>
@@ -76,7 +78,7 @@
                     <div class="price">
                         <p>44€</p>
                     </div>
-                </div>    
+                </div>
             </div>
             <div class="meal">
                 <span class="title-meal">DESSERTS</span>
@@ -105,13 +107,13 @@
             <div class="bouton-menu">Commander</div>
         </article>
     </main>
-    <footer class="footer-menu">
+    <footer>
         <img src="images/logo/ohmyfood@2x.svg" alt="logo">
         <span><i class="fa-solid fa-utensils"></i>Proposer un restaurant</span>
         <span><i class="fa-sharp fa-solid fa-handshake-angle"></i>Devenir partenaire</span>
-        <span>mentions légales</span>
-        <span>Contact</span>
+        <span>Mentions légales</span>
+        <a href="mailto:">Contact</a>
     </footer>
-    
-</body>    
+</body>
+
 </html>
