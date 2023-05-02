@@ -34,15 +34,15 @@ footer i {
         flex-direction: row;
         justify-content: flex-end;
         align-items: baseline;
-        gap: 2%;
+        gap: 20px;
 
 
 
         & img {
-            width: 9%;
+            width: 137px;
             order: 4;
             filter: invert(1);
-            margin-bottom: 15px;
+            margin-top: 15px;
         }
         & a{
             font-weight: bold;
