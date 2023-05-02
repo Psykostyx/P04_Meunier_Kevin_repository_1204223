@@ -35,14 +35,12 @@ footer i {
         justify-content: flex-end;
         align-items: baseline;
         gap: 2%;
-        position: absolute;
-        right: 25%;
+
 
 
         & img {
             width: 9%;
-            position: absolute;
-            left:37%;
+            order: 4;
             filter: invert(1);
             margin-bottom: 15px;
         }
