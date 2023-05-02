@@ -156,11 +156,15 @@ footer i {
 
 @media (min-width: 993px) and (max-width: 1980px) {
   footer {
-    flex-direction: row-reverse;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: baseline;
     gap: 2%;
   }
   footer img {
     width: 9%;
+    display: flex;
+    justify-content: flex-end;
     filter: invert(1);
     margin-bottom: 15px;
   }
