@@ -6,7 +6,6 @@
         visibility: hidden;
     }
 }
-
 .loader {
     z-index: 999;
     position: fixed;
@@ -20,47 +19,36 @@
     justify-content: center;
     animation:linear forwards loader_display 1s;
 }
-
 @keyframes loader_ball {
     0% {
         filter: contrast(0);
         transform: translateY(0px);
     }
-
     40% {
         transform: translateY(-13px);
         filter: contrast(1);
     }
-
     60% {
         transform: translateY(0px);
         filter: contrast(0);
     }
-
     100% {
         transform: translateY(0px);
         filter: contrast(0);
     }
 }
 
-
 .loader svg :nth-child(1) {
     fill: $color-primary;
     animation: loader_ball infinite 1s ease-in-out 0ms;
-
-
 }
 
 .loader svg :nth-child(2) {
     fill: $color-primary;
     animation: loader_ball infinite 1s ease-in-out .25s;
-
-
 }
 
 .loader svg :nth-child(3) {
     fill: $color-primary;
     animation: loader_ball infinite 1s ease-in-out .5s;
-
-
 }
